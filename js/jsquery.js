@@ -61,5 +61,44 @@ $(document).ready(function(){
   
 });
 
+// Xoa don hang nhap
+$(document).ready(function(){
+  $('#xoadonhangnhap-modal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Nút kích hoạt modal
+    var productId = button.data('productid'); // Lấy ID sản phẩm từ thuộc tính data-productid
+
+    var deleteButton = $(this).find('#confirm-xoa-donhangnhap');
+    deleteButton.data('productid', productId);
+  });
+  // Xử lý khi nhấp vào nút Xóa trong modal
+  $('#confirm-xoa-donhangnhap').click(function() {
+    console.log("jeje");
+    var productId = $(this).data('productid');
+    console.log(productId);
+    window.location.href = 'xoadonhangnhap.php?id=' + productId;
+  });
+  
+});
+
+// Xoa don hang xuat
+$(document).ready(function(){
+  $('#xoadonhangxuat-modal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Nút kích hoạt modal
+    var productId = button.data('productid'); // Lấy ID sản phẩm từ thuộc tính data-productid
+
+    var deleteButton = $(this).find('#confirm-xoa-donhangxuat');
+    deleteButton.data('productid', productId);
+  });
+  // Xử lý khi nhấp vào nút Xóa trong modal
+  $('#confirm-xoa-donhangxuat').click(function() {
+    console.log("jeje");
+    var productId = $(this).data('productid');
+    console.log(productId);
+    window.location.href = 'xoadonhangxuat.php?id=' + productId;
+  });
+  
+});
+
+
 
 
